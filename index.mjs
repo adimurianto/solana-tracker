@@ -11,7 +11,7 @@ const config = {
   }
 };
 
-cron.schedule('* * * * * *', async () => {
+cron.schedule('*/5 * * * *', async () => {
   try {
     const writeApi = new InfluxDB({url, token}).getWriteApi(org, bucket, 'ns')
     const response = await axios.request(config);
